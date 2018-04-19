@@ -32,12 +32,14 @@
 import java.io.*;
 import java.net.*;
 
+
+
 public class KnockKnockClient {
     public static void main(String[] args) throws IOException {
         
         if (args.length != 2) {
             System.err.println(
-                "Usage: java EchoClient <host name> <port number>");
+                "Usage: java KnockKnockClient <host name> <port number>");
             System.exit(1);
         }
 
@@ -55,7 +57,14 @@ public class KnockKnockClient {
             String fromServer;
             String fromUser;
             
-            //System.out.println("before loop");
+            String line = "Client first";
+            out.println(line);
+            
+            System.out.println("before recieve");
+            fromServer = in.readLine();
+            System.out.println(fromServer);
+
+            System.out.println("After recieve");
 
             while ((fromServer = in.readLine()) != null) {
                 System.out.println("Server: " + fromServer);
