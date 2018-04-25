@@ -16,7 +16,6 @@ public class chatClient {
         }
 
         String hostName = args[0];
-	        
         int portNumber = Integer.parseInt(args[1]);
 
         try (
@@ -29,10 +28,7 @@ public class chatClient {
                 new BufferedReader(new InputStreamReader(System.in));
             String fromServer;
             String fromUser;
-	            
-            String line = "Client first";
-            out.println(line);
-	            
+	    	            
             System.out.println("before recieve");
             fromServer = in.readLine();
             System.out.println(fromServer);
@@ -41,10 +37,13 @@ public class chatClient {
             ListenRun listenThread = new ListenRun(in);
             listenThread.start();
 
-            while ((fromServer = in.readLine()) != null) {
-                System.out.println("Server: " + fromServer);
+            while (true) {
+            	
+                /*System.out.println("Server: " + fromServer);
                 if (fromServer.equals("Bye."))
                     break;
+                    */
+            	
                 System.out.println("enter data");
                 fromUser = stdIn.readLine();
                 if(fromUser.compareTo("exit")==0) {
@@ -63,10 +62,9 @@ public class chatClient {
             System.err.println("Couldn't get I/O for the connection to " +
                 hostName);
             System.exit(1);
-        }
-    }
-	
-}
+       }
+   }	
+}	
 
 class ListenRun extends Thread {
 	BufferedReader reader;
