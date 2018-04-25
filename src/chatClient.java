@@ -39,10 +39,6 @@ public class chatClient {
 
             while (true) {
             	
-                /*System.out.println("Server: " + fromServer);
-                if (fromServer.equals("Bye."))
-                    break;
-                    */
             	
                 System.out.println("enter data");
                 fromUser = stdIn.readLine();
@@ -51,7 +47,7 @@ public class chatClient {
                 	break;
                 }	
                 if (fromUser != null) {
-                    //System.out.println("Client: " + fromUser);
+                    System.out.println("Client: " + fromUser);
                     out.println(fromUser);
                 }
             }
