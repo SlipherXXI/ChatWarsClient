@@ -44,6 +44,7 @@ public class KnockKnockClient {
         }
 
         String hostName = args[0];
+        
         int portNumber = Integer.parseInt(args[1]);
 
         try (
