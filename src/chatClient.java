@@ -29,17 +29,24 @@ public class chatClient {
             String fromServer;
             String fromUser;
 	    	            
-            System.out.println("before recieve");
-            fromServer = in.readLine();
+            //System.out.println("before recieve");
+            fromServer = in.readLine();          
             System.out.println(fromServer);
-            System.out.println("After recieve");
-	            
+            fromServer = in.readLine();          
+            System.out.println(fromServer);
+            //System.out.println("After recieve");
+            fromUser = stdIn.readLine();    
+            out.println(fromUser);
+            fromServer = in.readLine(); 
+            System.out.println(fromServer);
+            fromUser = stdIn.readLine();    
+            out.println(fromUser);
+            
             ListenRun listenThread = new ListenRun(in);
             listenThread.start();
 
             while (true) {
-            	
-            	
+            
                 System.out.println("enter data");
                 fromUser = stdIn.readLine();
                 if(fromUser.compareTo("exit")==0) {
@@ -47,7 +54,7 @@ public class chatClient {
                 	break;
                 }	
                 if (fromUser != null) {
-                    System.out.println("Client: " + fromUser);
+                    System.out.println("Me: " + fromUser);
                     out.println(fromUser);
                 }
             }
